@@ -5,6 +5,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
+        <script src="js/ajax.js" type="text/javascript"></script>
         <title>News</title>
     </head>
     <body>
@@ -13,10 +14,10 @@
             <p><button type="button" class="btn btn-success" name="create" id="create">Добавить новость</button></p>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row" id="show_all">
                 <div class="col-sm-12">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table id="show_news" class="table">
                             <tr>
                                 <th>Название</th>
                                 <th>Текст</th>
@@ -36,10 +37,10 @@
 
 
 
-            <div class="row">
-                <div class="col-sm-12">
+            <div class="row" id="add">
+<!--                <div class="col-sm-12">
                     <h2>Добавление новости</h2>
-                    <form>
+                    <form method="post" action="" id="news_add">
                         <div class="form-group">
                             <label for="title">Название:</label>
                             <input type="title" class="form-control" id="title" name="title">
@@ -54,12 +55,12 @@
                         </div>
                         <button type="submit" class="btn btn-default">Добавить</button>
                     </form>
-                </div>
+                </div>-->
             </div>
             
             
             
-             <div class="row">
+             <div class="row" id="edit_news">
                 <div class="col-sm-12">
                     <h2>Редактировать новость</h2>
                     <form>
