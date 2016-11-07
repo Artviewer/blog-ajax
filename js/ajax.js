@@ -24,46 +24,46 @@ $(document).ready(function () {
                 </div>');
     });
         
-    $('#news_add').click(function(e) {
-        //отменяем стандартное действие при отправке формы
-        e.preventDefault();
-        //берем из формы метод передачи данных
-        var m_method = $(this).attr('method');
-        //получаем адрес скрипта на сервере, куда нужно отправить форму
-        var m_action = $(this).attr('action');
-        //получаем данные, введенные пользователем в формате input1=value1&input2=value2...,
-        //то есть в стандартном формате передачи данных формы
-        var m_data = $(this).serialize();
-        $.ajax({
-            type: m_method,
-            url: m_action,
-            data: m_data,
-            beforeSend: function(){
-                $('#result').html('<img src="http://zornet.ru/Ajaxoskrip/Fyrkes/Zret/31/Loader-76.gif"/>');
-            },
-            success: function (response) {
-                $('#add').empty();
-                $('#result').append('\n\
-            <table id="res" class="table table-striped table-hover">\n\
-                <caption>Результат регистрации</caption>\n\
-                    <tr>\n\
-                        <th>Логин</th>\n\
-                        <th>E-Mail</th>\n\
-                        <th>Пароль</th>\n\
-                    </tr>\n\
-            </table>'
-                        );
-               //$.each(response, function (i, result) {
-                    $('#res').append('\n\
-                <tr>\n\
-                    <td>'+response.login+'</td>\n\
-                     <td>'+response.email+'</td>\n\
-                    <td>'+response.pass+'</td>\n\
-                  </tr>\n\
-                     ');
-              //  });
-
-            }
-//        });
-//    });
+//    $('#news_add').click(function(e) {
+//        //отменяем стандартное действие при отправке формы
+//        e.preventDefault();
+//        //берем из формы метод передачи данных
+//        var m_method = $(this).attr('method');
+//        //получаем адрес скрипта на сервере, куда нужно отправить форму
+//        var m_action = $(this).attr('action');
+//        //получаем данные, введенные пользователем в формате input1=value1&input2=value2...,
+//        //то есть в стандартном формате передачи данных формы
+//        var m_data = $(this).serialize();
+//        $.ajax({
+//            type: m_method,
+//            url: m_action,
+//            data: m_data,
+//            beforeSend: function(){
+//                $('#result').html('<img src="http://zornet.ru/Ajaxoskrip/Fyrkes/Zret/31/Loader-76.gif"/>');
+//            },
+//            success: function (response) {
+//                $('#add').empty();
+//                $('#result').append('\n\
+//            <table id="res" class="table table-striped table-hover">\n\
+//                <caption>Результат регистрации</caption>\n\
+//                    <tr>\n\
+//                        <th>Логин</th>\n\
+//                        <th>E-Mail</th>\n\
+//                        <th>Пароль</th>\n\
+//                    </tr>\n\
+//            </table>'
+//                        );
+//               //$.each(response, function (i, result) {
+//                    $('#res').append('\n\
+//                <tr>\n\
+//                    <td>'+response.login+'</td>\n\
+//                     <td>'+response.email+'</td>\n\
+//                    <td>'+response.pass+'</td>\n\
+//                  </tr>\n\
+//                     ');
+//              //  });
+//
+//            }
+////        });
+////    });
 });
